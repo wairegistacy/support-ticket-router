@@ -41,6 +41,9 @@ Other
 Initial experiments with finer-grained categories performed poorly due to label noise and semantic overlap.
 The taxonomy was redesigned to align with the information density of ticket text — a critical step that significantly improved model reliability.
 
+## Streamlit Demo
+![Streamlit demo](assets/streamlit_demo.png)
+
 ## How to run
 ```bash
 python -m venv .venv && source .venv/bin/activate

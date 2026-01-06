@@ -1,0 +1,3 @@
+T=0.55
+threshold=0.865
+target_precision=0.95

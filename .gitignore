@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Artifacts (keep model + calibration, ignore logs if any)
+artifacts/*.png
+artifacts/*.jsonl
+
+# Data (raw or rebuilt)
+data/*.csv
+
+# Notebooks checkpoints
+.ipynb_checkpoints/

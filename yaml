@@ -1,0 +1,13 @@
+
+---
+
+## 10) Makefile (optional but nice)
+
+```makefile
+.PHONY: train run
+
+train:
+	python scripts/train_baseline.py
+
+run:
+	streamlit run app/streamlit_app.py

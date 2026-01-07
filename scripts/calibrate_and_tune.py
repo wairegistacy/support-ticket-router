@@ -10,10 +10,7 @@ from sklearn.model_selection import train_test_split
 from src.preprocessing import normalize
 from src.model import train_tfidf_logreg
 
-
-# -----------------------------
 # Utilities
-# -----------------------------
 def stratified_split(
     texts: List[str],
     labels: List[str],
@@ -47,10 +44,7 @@ def one_hot(y: np.ndarray, class_to_idx: Dict[str, int]) -> np.ndarray:
         oh[i, class_to_idx[label]] = 1.0
     return oh
 
-
-# -----------------------------
 # Temperature Scaling
-# -----------------------------
 @dataclass
 class TemperatureScaler:
     T: float  # temperature
@@ -90,10 +84,7 @@ def fit_temperature_scaling(
 
     return TemperatureScaler(T=best_T)
 
-
-# -----------------------------
 # Calibration metrics
-# -----------------------------
 def expected_calibration_error(
     confidences: np.ndarray,
     correct: np.ndarray,
@@ -147,10 +138,7 @@ def save_reliability_plot(conf: np.ndarray, correct: np.ndarray, out_path: str, 
     plt.savefig(out_path, dpi=200)
     plt.close(fig)
 
-
-# -----------------------------
 # Threshold tuning for auto-routing
-# -----------------------------
 def auto_route_precision_coverage(
     y_true: List[str],
     y_pred: List[str],
@@ -171,7 +159,6 @@ def auto_route_precision_coverage(
     precision = float((y_true[covered] == y_pred[covered]).mean())
     coverage = float(covered.mean())
     return precision, coverage
-
 
 def find_threshold_for_target_precision(
     y_true: List[str],
@@ -199,10 +186,7 @@ def find_threshold_for_target_precision(
 
     return best
 
-
-# -----------------------------
 # Main
-# -----------------------------
 def main():
     data_path = "data/tickets.csv"
     if not os.path.exists(data_path):
